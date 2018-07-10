@@ -43,4 +43,10 @@ public class DemoController {
         return ResponseEntity.ok(demoService.convertTextEntityToTextIdDto(entity));
     }
 
+    @RequestMapping(value = "/greeting", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<?> deleteGreeting(@PathVariable UUID id) {
+        return new ResponseEntity<String>("deleted!", HttpStatus.NO_CONTENT);
+    }
+
 }
