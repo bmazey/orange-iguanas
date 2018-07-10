@@ -43,4 +43,15 @@ public class DemoController {
         return ResponseEntity.ok(demoService.convertTextEntityToTextIdDto(entity));
     }
 
+    @RequestMapping(value= "/mariko", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<?> getMarikoGreeting() {
+        System.out.println("Hello from Mariko! (inside Spring)");
+
+        TextDto greeting = new TextDto();
+        greeting.setContent("hello from Mariko!");
+
+        return ResponseEntity.ok(greeting);
+    }
+
 }
