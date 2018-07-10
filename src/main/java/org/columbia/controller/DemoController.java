@@ -38,7 +38,7 @@ public class DemoController {
 
     @RequestMapping(value = "/greeting", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> postGreeting(TextDto text) {
+    public ResponseEntity<?> postGreeting(@RequestBody TextDto text) {
         TextEntity entity = demoService.createText(demoService.convertTextDtoToTextEntity(text));
         return ResponseEntity.ok(demoService.convertTextEntityToTextIdDto(entity));
     }
